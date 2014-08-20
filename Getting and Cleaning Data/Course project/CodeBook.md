@@ -10,7 +10,7 @@ Version 1.0
 ***
 
 ##Data Set Information:
-***
+
 ###Name
 #### averageDataset_HARUS.txt
 
