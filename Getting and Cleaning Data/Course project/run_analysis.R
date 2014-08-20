@@ -4,14 +4,14 @@ setwd("~/Repositorios/datasciencecoursera/Getting and Cleaning Data/Course proje
 
 #Summarizing data adding headers and labels.
 
-featuresList <- read.table("./data/features.txt")
-activities  <- read.table("./data/activity_labels.txt")
+featuresList <- read.table("./UCI HAR Dataset/features.txt")
+activities  <- read.table("./UCI HAR Dataset/activity_labels.txt")
 
 #Importing, preparing and summarizing Train data
 
-xTrain <- read.table("./data/train/X_train.txt",header=FALSE)
-yTrain <- read.table("./data/train/y_train.txt",header=FALSE)
-subjectTrain <- read.table("./data/train/subject_train.txt",header=FALSE)
+xTrain <- read.table("./UCI HAR Dataset/train/X_train.txt",header=FALSE)
+yTrain <- read.table("./UCI HAR Dataset/train/y_train.txt",header=FALSE)
+subjectTrain <- read.table("./UCI HAR Dataset/train/subject_train.txt",header=FALSE)
 
 names(xTrain) <- featuresList$V2
 
@@ -23,9 +23,9 @@ train = cbind(xTrain, subjectTrain, yTrain)
 
 #Importing, preparing and summarizing Test data
 
-xTest <- read.table("./data/test/X_test.txt",header=FALSE)
-yTest <- read.table("./data/test/y_test.txt",header=FALSE)
-subjectTest <- read.table("./data/test/subject_test.txt",header=FALSE)
+xTest <- read.table("./UCI HAR Dataset/test/X_test.txt",header=FALSE)
+yTest <- read.table("./UCI HAR Dataset/test/y_test.txt",header=FALSE)
+subjectTest <- read.table("./UCI HAR Dataset/test/subject_test.txt",header=FALSE)
 names(xTest) <- featuresList$V2
 
 ## 3 Uses descriptive activity names to name the activities in the data set
@@ -55,18 +55,19 @@ Data <- Data[,grep("mean\\(\\)|std\\(\\)|subject|activity",
 
 names(Data) <- gsub("\\(|\\)|-|,", "", names(Data))
 names(Data) <- gsub("mean", "Mean", names(Data))
-names(Data) <- gsub("mean", "Mean", names(Data))
+names(Data) <- gsub("std", "Std", names(Data))
 
 #
 
 # 5 Creates a second, independent tidy data set with the average  
 #   of each variablefor each activity and each subject. 
-
-#meltedData<-melt(Data, id=c("subject", "activity"), 
+#   
+#   meltedData<-melt(Data, id=c("subject", "activity"), 
 #                 measure.vars=names(Data)[3:68])
-#meltedDataMean<-dcast(meltedData, subject + activity ~ variable, mean)
+#   meltedDataMean<-dcast(meltedData, subject + activity ~ variable, mean)
 
 tidyDataAverage <- ddply(Data, .(subject, activity), numcolwise(mean))
+
 write.table(tidyDataAverage, "averageDataset_HARUS.txt", row.names=FALSE)
 
 
