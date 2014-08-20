@@ -61,7 +61,7 @@ names(Data) <- gsub("std", "Std", names(Data))
 
 # 5 Creates a second, independent tidy data set with the average  
 #   of each variablefor each activity and each subject. 
-#   
+#   First option:
 #   meltedData<-melt(Data, id=c("subject", "activity"), 
 #                 measure.vars=names(Data)[3:68])
 #   meltedDataMean<-dcast(meltedData, subject + activity ~ variable, mean)
