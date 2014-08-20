@@ -27,14 +27,15 @@ Check the /Data/README.txt file on repo for further details about the source dat
 ### Analysis Variables
 | Variable | Descritpion
 | -------- |---------
-| Activity | The activity peformed.
-| Subject | The ID of the subject.
-| tBodyAcc-mean()-X | Mean time for acceleration of body for X direction.
-| tBodyAcc-mean()-Y | Mean time for acceleration of body for Y direction.
-| tBodyAcc-mean()-Z | Mean time for acceleration of body for Z direction.
-| tBodyAcc-std()-X | Standard deviation of time for acceleration of body for X direction.
-| tBodyAcc-std()-Y | Standard deviation of time for acceleration of body for Y direction.
-| tBodyAcc-std()-Z | Standard deviation of time for acceleration of body for Z direction.
+| subject | The ID of the subject.
+| activity | The activity performed.
+| tBodyAccMeanX| Mean time for acceleration of body for X direction.
+| tBodyAccMeanY | Mean time for acceleration of body for Y direction.
+| tBodyAccMeanZ | Mean time for acceleration of body for Z direction.
+| tBodyAccStdX | Standard deviation of time for acceleration of body for X direction.
+| tBodyAccStdY | Standard deviation of time for acceleration of body for Y direction.
+| tBodyAccStdZ
+ | Standard deviation of time for acceleration of body for Z direction.
 | tGravityAcc-mean()-X | Mean time of acceleration of gravity for X direction.
 | tGravityAcc-mean()-Y | Mean time of acceleration of gravity for Y direction.
 | tGravityAcc-mean()-Z | Mean time of acceleration of gravity for Z direction.
