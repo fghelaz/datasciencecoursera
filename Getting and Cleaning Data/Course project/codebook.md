@@ -1,46 +1,55 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
-{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\fonttbl\f0\fnil\fcharset0 Consolas-Bold;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Consolas;
+}
 {\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red52\green110\blue183;\red213\green213\blue213;
 \red246\green246\blue246;}
-\paperw11900\paperh16840\margl1440\margr1440\margb1417\margt1417\vieww39300\viewh17140\viewkind1\viewscale254
+\paperw11900\paperh16840\margl1440\margr1440\margb1417\margt1417\vieww39600\viewh17440\viewkind1\viewscale254
 \deftab720
 \pard\pardeftab720\ri0\sa320
 
-\f0\b\fs72 \cf2 Code Book\
+\f0\b\fs72 \cf2 Code Book \
+averageDataset_HARUS
+\f1 \
+\pard\pardeftab720
+
+\f2\b0\fs30 \cf2 ======================================================\
+Human Activity Recognition Using Smartphones \
+average variables Dataset\
+Version 1.0\
+======================================================
+\f1\b\fs48 \cf2 \
+\pard\pardeftab720
+
+\f2\b0\fs28 \cf2 This is a tidy data set with the \ul average of each variable\ulnone  for each activity and each subject of the measurements on the mean and standard deviation for each measurement as of result merging two Data Sets: Train and Test.\
+\
+
+\fs20 \cf2 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.\
+\pard\pardeftab720\ri0\sa320
+\cf2 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.\
+Check the /Data/README.txt file for further details about the source dataset.\
 \pard\pardeftab720\ri0
 
-\fs48 \cf3 \
+\f0\b \cf3 \
 \pard\pardeftab720\ri0\sa320
-\cf2 Data Set Information:\
-\pard\pardeftab720\ri0\sa320
-
-\b0\fs20 \cf2 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.\
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.\
-Check the README.txt file for further details about this dataset.\
-\pard\pardeftab720\ri0
-
-\b \cf3 \
-\pard\pardeftab720\ri0\sa320
-\cf2 Study Information\
+\cf2 Original study Information\
 \pard\pardeftab720\ri0\sa320
 {\field{\*\fldinst{HYPERLINK "http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones"}}{\fldrslt 
-\b0 \cf3 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones}}
-\b0 \
+\f2\b0 \cf3 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones}}
+\f2\b0 \
 \pard\pardeftab720\ri0
 
-\b \cf3 \
+\f0\b \cf3 \
 \pard\pardeftab720\ri0\sa320
-\cf2 Data Set\
+\cf2 Orinal Data Set\
 \pard\pardeftab720\ri0\sa320
 {\field{\*\fldinst{HYPERLINK "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"}}{\fldrslt 
-\b0 \cf3 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip}}
-\b0 \
+\f2\b0 \cf3 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip}}
+\f2\b0 \
 \pard\pardeftab720\ri0
 
-\b \cf3 \
+\f0\b \cf3 \
 \pard\pardeftab720\ri0\sa320
 \cf2 Analysis Variables\
-\
 
 \itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth17140\trftsWidth3 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
 \clvertalc \clshdrawnil \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadl100 \clpadr100 \gaph\cellx4320
@@ -48,14 +57,14 @@ Check the README.txt file for further details about this dataset.\
 \pard\intbl\itap1\pardeftab720\ri0\qc
 \cf2 Variable\cell 
 \pard\intbl\itap1\pardeftab720\ri0\qc
-\cf2 Descritpion\cell \row
+\cf2 Description\cell \row
 
 \itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth17140\trftsWidth3 \trbrdrl\brdrnil \trbrdrr\brdrnil 
 \clvertalc \clcbpat1 \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadl100 \clpadr100 \gaph\cellx4320
 \clvertalc \clcbpat1 \clwWidth12000\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadl100 \clpadr100 \gaph\cellx8640
 \pard\intbl\itap1\pardeftab720\ri0
 
-\b0\fs18 \cf2 subject\cell 
+\f2\b0\fs18 \cf2 subject\cell 
 \pard\intbl\itap1\pardeftab720\ri0
 \cf2 The ID of the subject.\cell \row
 
@@ -65,7 +74,7 @@ Check the README.txt file for further details about this dataset.\
 \pard\intbl\itap1\pardeftab720\ri0
 \cf2 activity\cell 
 \pard\intbl\itap1\pardeftab720\ri0
-\cf2 The activity peformed.\cell \row
+\cf2 The activity performed.\cell \row
 
 \itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth17140\trftsWidth3 \trbrdrl\brdrnil \trbrdrr\brdrnil 
 \clvertalc \clcbpat1 \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadl100 \clpadr100 \gaph\cellx4320
@@ -441,7 +450,7 @@ Check the README.txt file for further details about this dataset.\
 \pard\intbl\itap1\pardeftab720\ri0
 \cf2 fBodyAccJerkMeanX\cell 
 \pard\intbl\itap1\pardeftab720\ri0
-\cf2 Mean frequency of body accerlation jerk for X direction.\cell \row
+\cf2 Mean frequency of body acceleration jerk for X direction.\cell \row
 
 \itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth17140\trftsWidth3 \trbrdrl\brdrnil \trbrdrr\brdrnil 
 \clvertalc \clcbpat5 \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadl100 \clpadr100 \gaph\cellx4320
@@ -449,7 +458,7 @@ Check the README.txt file for further details about this dataset.\
 \pard\intbl\itap1\pardeftab720\ri0
 \cf2 fBodyAccJerkMeanY\cell 
 \pard\intbl\itap1\pardeftab720\ri0
-\cf2 Mean frequency of body accerlation jerk for Y direction.\cell \row
+\cf2 Mean frequency of body acceleration jerk for Y direction.\cell \row
 
 \itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth17140\trftsWidth3 \trbrdrl\brdrnil \trbrdrr\brdrnil 
 \clvertalc \clcbpat1 \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadl100 \clpadr100 \gaph\cellx4320
@@ -457,7 +466,7 @@ Check the README.txt file for further details about this dataset.\
 \pard\intbl\itap1\pardeftab720\ri0
 \cf2 fBodyAccJerkMeanZ\cell 
 \pard\intbl\itap1\pardeftab720\ri0
-\cf2 Mean frequency of body accerlation jerk for Z direction.\cell \row
+\cf2 Mean frequency of body acceleration jerk for Z direction.\cell \row
 
 \itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth17140\trftsWidth3 \trbrdrl\brdrnil \trbrdrr\brdrnil 
 \clvertalc \clcbpat5 \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadl100 \clpadr100 \gaph\cellx4320
@@ -465,7 +474,7 @@ Check the README.txt file for further details about this dataset.\
 \pard\intbl\itap1\pardeftab720\ri0
 \cf2 fBodyAccJerkStdX\cell 
 \pard\intbl\itap1\pardeftab720\ri0
-\cf2 Standard deviation frequency of body accerlation jerk for X direction.\cell \row
+\cf2 Standard deviation frequency of body acceleration jerk for X direction.\cell \row
 
 \itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth17140\trftsWidth3 \trbrdrl\brdrnil \trbrdrr\brdrnil 
 \clvertalc \clcbpat1 \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadl100 \clpadr100 \gaph\cellx4320
@@ -473,7 +482,7 @@ Check the README.txt file for further details about this dataset.\
 \pard\intbl\itap1\pardeftab720\ri0
 \cf2 fBodyAccJerkStdY\cell 
 \pard\intbl\itap1\pardeftab720\ri0
-\cf2 Standard deviation frequency of body accerlation jerk for Y direction.\cell \row
+\cf2 Standard deviation frequency of body acceleration jerk for Y direction.\cell \row
 
 \itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth17140\trftsWidth3 \trbrdrl\brdrnil \trbrdrr\brdrnil 
 \clvertalc \clcbpat5 \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadl100 \clpadr100 \gaph\cellx4320
@@ -481,7 +490,7 @@ Check the README.txt file for further details about this dataset.\
 \pard\intbl\itap1\pardeftab720\ri0
 \cf2 fBodyAccJerkStdZ\cell 
 \pard\intbl\itap1\pardeftab720\ri0
-\cf2 Standard deviation frequency of body accerlation jerk for Z direction.\cell \row
+\cf2 Standard deviation frequency of body acceleration jerk for Z direction.\cell \row
 
 \itap1\trowd \taflags1 \trgaph108\trleft-108 \trwWidth17140\trftsWidth3 \trbrdrl\brdrnil \trbrdrr\brdrnil 
 \clvertalc \clcbpat1 \clwWidth5140\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadl100 \clpadr100 \gaph\cellx4320
@@ -593,7 +602,7 @@ Check the README.txt file for further details about this dataset.\
 \pard\intbl\itap1\pardeftab720\ri0
 \cf2 fBodyBodyGyroJerkMagStd\cell 
 \pard\intbl\itap1\pardeftab720\ri0
-\cf2 Standard deviation of frequency of magnitudeof body gyroscope jerk measurement.
+\cf2 Standard deviation of frequency of magnitude of body gyroscope jerk measurement.
 \fs20 \cell \lastrow\row
 \pard\pardeftab720\ri0
 \cf2 \
