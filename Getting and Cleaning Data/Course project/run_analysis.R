@@ -1,11 +1,11 @@
 library(plyr)
 
-setwd("~/Repositorios/datasciencecoursera/Getting and Cleaning Data/Course project")
+#setwd("~/Repositorios/datasciencecoursera/Getting and Cleaning Data/Course project")
 
 #Summarizing data adding headers and labels.
 
 featuresList <- read.table("./Data/features.txt")
-activities  <- read.table("./Datat/activity_labels.txt")
+activities  <- read.table("./Data/activity_labels.txt")
 
 #Importing, preparing and summarizing Train data
 
@@ -24,7 +24,7 @@ train = cbind(xTrain, subjectTrain, yTrain)
 #Importing, preparing and summarizing Test data
 
 xTest <- read.table("./Data/test/X_test.txt",header=FALSE)
-yTest <- read.table("./Datas/test/y_test.txt",header=FALSE)
+yTest <- read.table("./Data/test/y_test.txt",header=FALSE)
 subjectTest <- read.table("./Data/test/subject_test.txt",header=FALSE)
 names(xTest) <- featuresList$V2
 
@@ -37,7 +37,7 @@ test = cbind(xTest, subjectTest, yTest)
 # 1 Merge the training and the test sets to create one data set.
 
 Data<-rbind(train, test)
-Data<-mergedData[,c(562,563,1:561)]
+Data<-Data[,c(562,563,1:561)]
 
 # 4 Appropriately labels the data set with descriptive variable names. 
 
