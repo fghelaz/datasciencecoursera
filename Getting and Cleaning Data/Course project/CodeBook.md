@@ -34,65 +34,66 @@ Check the /Data/README.txt file on repo for further details about the source dat
 | tBodyAccMeanZ | Mean time for acceleration of body for Z direction.
 | tBodyAccStdX | Standard deviation of time for acceleration of body for X direction.
 | tBodyAccStdY | Standard deviation of time for acceleration of body for Y direction.
-| tBodyAccStdZ
- | Standard deviation of time for acceleration of body for Z direction.
-| tGravityAcc-mean()-X | Mean time of acceleration of gravity for X direction.
-| tGravityAcc-mean()-Y | Mean time of acceleration of gravity for Y direction.
-| tGravityAcc-mean()-Z | Mean time of acceleration of gravity for Z direction.
-| tGravityAcc-std()-X | Standard deviation of time of acceleration of gravity for X direction.
-| tGravityAcc-std()-Y | Standard deviation of time of acceleration of gravity for Y direction.
-| tGravityAcc-std()-Z | Standard deviation of time of acceleration of gravity for Z direction.
-| tBodyAccJerk-mean()-X | Mean time of body acceleration jerk for X direction.
-| tBodyAccJerk-mean()-Y | Mean time of body acceleration jerk for Y direction
-| tBodyAccJerk-mean()-Z | Mean time of body acceleration jerk for Z direction
-| tBodyAccJerk-std()-X | Standard deviation of time of body acceleration jerk for X direction.
-| tBodyAccJerk-std()-Y | Standard deviation of time of body acceleration jerk for Y direction.
-| tBodyAccJerk-std()-Z | Standard deviation of time of body acceleration jerk for Z direction.
-| tBodyGyro-mean()-X | Mean body gyroscope measurement for X direction.
-| tBodyGyro-mean()-Y | Mean body gyroscope measurement for Y direction.
-| tBodyGyro-mean()-Z | Mean body gyroscope measurement for Z direction.
-| tBodyGyro-std()-X | Standard deviation of body gyroscope measurement for X direction.
-| tBodyGyro-std()-Y | Standard deviation of body gyroscope measurement for Y direction.
-| tBodyGyro-std()-Z | Standard deviation of body gyroscope measurement for Z direction.
-| tBodyGyroJerk-mean()-X | Mean jerk signal of body for X direction.
-| tBodyGyroJerk-mean()-Y | Mean jerk signal of body for Y direction.
-| tBodyGyroJerk-mean()-Z | Mean jerk signal of body for Z direction.
-| tBodyGyroJerk-std()-X | Standard deviation of jerk signal of body for X direction.
-| tBodyGyroJerk-std()-Y | Standard deviation of jerk signal of body for Y direction.
-| tBodyGyroJerk-std()-Z | Standard deviation of jerk signal of body for Z direction.
-| tBodyAccMag-mean() | Mean magnitude of body Acc
-| tBodyAccMag-std() | Standard deviation of magnitude of body Acc
-| tGravityAccMag-mean() | Mean gravity acceleration magnitude.
-| tGravityAccMag-std() | Standard deviation of gravity acceleration magnitude.
-| tBodyAccJerkMag-mean() | Mean magnitude of body acceleration jerk.
-| tBodyAccJerkMag-std() | Standard deviation of magnitude of body acceleration jerk.
-| tBodyGyroMag-mean() | Mean magnitude of body gyroscope measurement.
-| tBodyGyroMag-std() | Standard deviation of magnitude of body gyroscope measurement.
-| tBodyGyroJerkMag-mean() | Mean magnitude of body body gyroscope jerk measurement.
-| tBodyGyroJerkMag-std() | Standard deviation of magnitude of body body gyroscope jerk measurement.
-| fBodyAcc-mean()-X | Mean frequency of body acceleration for X direction.
-| fBodyAcc-mean()-Y | Mean frequency of body acceleration for Y direction.
-| fBodyAcc-mean()-Z | Mean frequency of body acceleration for Z direction.
-| fBodyAcc-std()-X | Standard deviation of frequency of body acceleration for X direction.
-| fBodyAcc-std()-Y | Standard deviation of frequency of body acceleration for Y direction.
-| fBodyAcc-std()-Z | Standard deviation of frequency of body acceleration for Z direction.
-| fBodyAccJerk-mean()-X | Mean frequency of body accerlation jerk for X direction.
-| fBodyAccJerk-mean()-Y | Mean frequency of body accerlation jerk for Y direction.
-| fBodyAccJerk-mean()-Z | Mean frequency of body accerlation jerk for Z direction.
-| fBodyAccJerk-std()-X | Standard deviation frequency of body accerlation jerk for X direction.
-| fBodyAccJerk-std()-Y | Standard deviation frequency of body accerlation jerk for Y direction.
-| fBodyAccJerk-std()-Z | Standard deviation frequency of body accerlation jerk for Z direction.
-| fBodyGyro-mean()-X | Mean frequency of body gyroscope measurement for X direction.
-| fBodyGyro-mean()-Y | Mean frequency of body gyroscope measurement for Y direction.
-| fBodyGyro-mean()-Z | Mean frequency of body gyroscope measurement for Z direction.
-| fBodyGyro-std()-X | Standard deviation frequency of body gyroscope measurement for X direction.
-| fBodyGyro-std()-Y | Standard deviation frequency of body gyroscope measurement for Y direction.
-| fBodyGyro-std()-Z | Standard deviation frequency of body gyroscope measurement for Z direction.
-| fBodyAccMag-mean() | Mean frequency of body acceleration magnitude.
-| fBodyAccMag-std() | Standard deviation of frequency of body acceleration magnitude.
-| fBodyBodyAccJerkMag-mean() | Mean frequency of body acceleration jerk magnitude.
-| fBodyBodyAccJerkMag-std() | Standard deviation of frequency of body acceleration jerk magnitude.
-| fBodyBodyGyroMag-mean() | Mean frequency of magnitude of body gyroscope measurement.
-| fBodyBodyGyroMag-std() | Standard deviation of frequency of magnitude of body gyroscope measurement.
-| fBodyBodyGyroJerkMag-mean() | Mean frequency of magnitude of body gyroscope jerk measurement.
+| tBodyAccStdZ| Standard deviation of time for acceleration of body for Z direction.
+| tGravityAccMeanX | Mean time of acceleration of gravity for X direction.
+| tGravityAccMeanY | Mean time of acceleration of gravity for Y direction.
+| tGravityAccMeanZ | Mean time of acceleration of gravity for Z direction.
+| tGravityAccStdX | Standard deviation of time of acceleration of gravity for X direction.
+| tGravityAccStdY | Standard deviation of time of acceleration of gravity for Y direction.
+| tGravityAccStdZ | Standard deviation of time of acceleration of gravity for Z direction.
+| tBodyAccJerkMeanX | Mean time of body acceleration jerk for X direction.
+| tBodyAccJerkMeanY | Mean time of body acceleration jerk for Y direction
+| tBodyAccJerkMeanZ | Mean time of body acceleration jerk for Z direction
+| tBodyAccJerkStdX | Standard deviation of time of body acceleration jerk for X direction.
+| tBodyAccJerkStdY | Standard deviation of time of body acceleration jerk for Y direction.
+| tBodyAccJerkStdZ | Standard deviation of time of body acceleration jerk for Z direction.
+| tBodyGyroMeanX | Mean body gyroscope measurement for X direction.
+| tBodyGyroMeanY | Mean body gyroscope measurement for Y direction.
+| tBodyGyroMeanZ | Mean body gyroscope measurement for Z direction.
+| tBodyGyroStdX | Standard deviation of body gyroscope measurement for X direction.
+| tBodyGyroStdY | Standard deviation of body gyroscope measurement for Y direction.
+| tBodyGyroStdZ | Standard deviation of body gyroscope measurement for Z direction.
+| tBodyGyroJerkMeanX | Mean jerk signal of body for X direction.
+| tBodyGyroJerkMeanY | Mean jerk signal of body for Y direction.
+| tBodyGyroJerkMeanZ | Mean jerk signal of body for Z direction.
+| tBodyGyroJerkStdX | Standard deviation of jerk signal of body for X direction.
+| tBodyGyroJerkStdY | Standard deviation of jerk signal of body for Y direction.
+| tBodyGyroJerkStdZ | Standard deviation of jerk signal of body for Z direction.
+| tBodyAccMagMean | Mean magnitude of body Acc
+| tBodyAccMagStd | Standard deviation of magnitude of body Acc
+| tGravityAccMagMean | Mean gravity acceleration magnitude.
+| tGravityAccMagStd | Standard deviation of gravity acceleration magnitude.
+| tBodyAccJerkMagMean | Mean magnitude of body acceleration jerk.
+| tBodyAccJerkMagStd | Standard deviation of magnitude of body acceleration jerk.
+| tBodyGyroMagMean | Mean magnitude of body gyroscope measurement.
+| tBodyGyroMagStd | Standard deviation of magnitude of body gyroscope measurement.
+| tBodyGyroJerkMagMean | Mean magnitude of body body gyroscope jerk measurement.
+| tBodyGyroJerkMagStd | Standard deviation of magnitude of body body gyroscope jerk measurement.
+| fBodyAccMeanX| Mean frequency of body acceleration for X direction.
+| fBodyAccMeanY | Mean frequency of body acceleration for Y direction.
+| fBodyAccMeanZ | Mean frequency of body acceleration for Z direction.
+| fBodyAccStdX | Standard deviation of frequency of body acceleration for X direction.
+| fBodyAccStdY | Standard deviation of frequency of body acceleration for Y direction.
+| fBodyAccStdZ | Standard deviation of frequency of body acceleration for Z direction.
+| fBodyAccJerkMeanX | Mean frequency of body accerlation jerk for X direction.
+| fBodyAccJerkMeanY | Mean frequency of body accerlation jerk for Y direction.
+| fBodyAccJerkMeanZ | Mean frequency of body accerlation jerk for Z direction.
+| fBodyAccJerkStdX | Standard deviation frequency of body accerlation jerk for X direction.
+| fBodyAccJerkStdY | Standard deviation frequency of body accerlation jerk for Y direction.
+| fBodyAccJerkStdZ | Standard deviation frequency of body accerlation jerk for Z direction.
+| fBodyGyroMeanX | Mean frequency of body gyroscope measurement for X direction.
+| fBodyGyroMeanY | Mean frequency of body gyroscope measurement for Y direction.
+| fBodyGyroMeanZ| Mean frequency of body gyroscope measurement for Z direction.
+| fBodyGyroStdX| Standard deviation frequency of body gyroscope measurement for X direction.
+| fBodyGyroStdY | Standard deviation frequency of body gyroscope measurement for Y direction.
+| fBodyGyroStdZ | Standard deviation frequency of body gyroscope measurement for Z direction.
+| fBodyAccMagMean | Mean frequency of body acceleration magnitude.
+| fBodyAccMagStd | Standard deviation of frequency of body acceleration magnitude.
+| fBodyBodyAccJerkMagMean | Mean frequency of body acceleration jerk magnitude.
+| fBodyBodyAccJerkMagStd | Standard deviation of frequency of body acceleration jerk magnitude.
+| fBodyBodyGyroMagMean | Mean frequency of magnitude of body gyroscope measurement.
+| fBodyBodyGyroMagStd | Standard deviation of frequency of magnitude of body gyroscope measurement.
+| fBodyBodyGyroJerkMagMean | Mean frequency of magnitude of body gyroscope jerk measurement.
+| fBodyBodyGyroJerkMagStd | Standard deviation of frequency of magnitude of body gyroscope jerk measurement.
+
 
