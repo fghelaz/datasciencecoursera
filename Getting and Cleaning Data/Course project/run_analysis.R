@@ -10,7 +10,7 @@ activities  <- read.table("./data/activity_labels.txt")
 #Importing, preparing and summarizing Train data
 
 xTrain <- read.table("./data/train/X_train.txt",header=FALSE)
-yTrain <- read.table("./data./train/y_train.txt",header=FALSE)
+yTrain <- read.table("./data/train/y_train.txt",header=FALSE)
 subjectTrain <- read.table("./data/train/subject_train.txt",header=FALSE)
 
 names(xTrain) <- featuresList$V2
@@ -36,20 +36,20 @@ test = cbind(xTest, subjectTest, yTest)
 
 # 1 Merge the training and the test sets to create one data set.
 
-mergedData<-rbind(train, test)
-mergedData<-mergedData[,c(562,563,1:561)]
+Data<-rbind(train, test)
+Data<-mergedData[,c(562,563,1:561)]
 
 # 4 Appropriately labels the data set with descriptive variable names. 
 
-names(mergedData)[1:2] <- c("subject","activity")
+names(Data)[1:2] <- c("subject","activity")
 
 
 # 2 Extracts only the measurements on the mean and standard deviation 
 #   for each measurement.
 
 
-Data = mergedData[,grep("mean\\(\\)|std\\(\\)|subject|activity", 
-                        names(mergedData), value=TRUE)]
+Data <- Data[,grep("mean\\(\\)|std\\(\\)|subject|activity", 
+                        names(Data), value=TRUE)]
 
 # Creating tidy dataset 
 
@@ -57,13 +57,16 @@ names(Data) <- gsub("\\(|\\)|-|,", "", names(Data))
 names(Data) <- gsub("mean", "Mean", names(Data))
 names(Data) <- gsub("mean", "Mean", names(Data))
 
+#
+
 # 5 Creates a second, independent tidy data set with the average  
 #   of each variablefor each activity and each subject. 
 
-meltedData<-melt(Data, id=c("subject", "activity"), 
-                 measure.vars=names(Data)[3:68])
-meltedDataMean<-dcast(meltedData, subject + activity ~ variable, mean)
-write.table(meltedDataMean, "means_dataset.txt", row.names=FALSE)
+#meltedData<-melt(Data, id=c("subject", "activity"), 
+#                 measure.vars=names(Data)[3:68])
+#meltedDataMean<-dcast(meltedData, subject + activity ~ variable, mean)
 
-#--------
-result = ddply(Data, .(subject, activity), numcolwise(mean))
+tidyDataAverage <- ddply(Data, .(subject, activity), numcolwise(mean))
+write.table(tidyDataAverage, "averageDataset_HARUS.txt", row.names=FALSE)
+
+
