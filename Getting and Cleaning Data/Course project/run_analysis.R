@@ -4,14 +4,14 @@ setwd("~/Repositorios/datasciencecoursera/Getting and Cleaning Data/Course proje
 
 #Summarizing data adding headers and labels.
 
-featuresList <- read.table("./UCI HAR Dataset/features.txt")
-activities  <- read.table("./UCI HAR Dataset/activity_labels.txt")
+featuresList <- read.table("./Data/features.txt")
+activities  <- read.table("./Datat/activity_labels.txt")
 
 #Importing, preparing and summarizing Train data
 
-xTrain <- read.table("./UCI HAR Dataset/train/X_train.txt",header=FALSE)
-yTrain <- read.table("./UCI HAR Dataset/train/y_train.txt",header=FALSE)
-subjectTrain <- read.table("./UCI HAR Dataset/train/subject_train.txt",header=FALSE)
+xTrain <- read.table("./Data/train/X_train.txt",header=FALSE)
+yTrain <- read.table("./Data/train/y_train.txt",header=FALSE)
+subjectTrain <- read.table("./Data/train/subject_train.txt",header=FALSE)
 
 names(xTrain) <- featuresList$V2
 
@@ -23,9 +23,9 @@ train = cbind(xTrain, subjectTrain, yTrain)
 
 #Importing, preparing and summarizing Test data
 
-xTest <- read.table("./UCI HAR Dataset/test/X_test.txt",header=FALSE)
-yTest <- read.table("./UCI HAR Dataset/test/y_test.txt",header=FALSE)
-subjectTest <- read.table("./UCI HAR Dataset/test/subject_test.txt",header=FALSE)
+xTest <- read.table("./Data/test/X_test.txt",header=FALSE)
+yTest <- read.table("./Datas/test/y_test.txt",header=FALSE)
+subjectTest <- read.table("./Data/test/subject_test.txt",header=FALSE)
 names(xTest) <- featuresList$V2
 
 ## 3 Uses descriptive activity names to name the activities in the data set
