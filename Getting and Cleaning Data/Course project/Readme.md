@@ -48,6 +48,7 @@ or clone this repo in your **working directory**.
   - Extracts only the measurements on the mean and standard deviation for each measurement. 
   - Appropriately labels the data set with descriptive variable names.
   - Creates a tidy data Set **"averageDataset_HARUS.txt"** with the average of each variable for each activity and each subject.
+  
 ---
 
 
