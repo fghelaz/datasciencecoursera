@@ -1,3 +1,5 @@
+install.packages("plyr")
+
 library(plyr)
 
 #setwd("~/Repositorios/datasciencecoursera/Getting and Cleaning Data/Course project")
@@ -37,6 +39,9 @@ test = cbind(xTest, subjectTest, yTest)
 # 1 Merge the training and the test sets to create one data set.
 
 Data<-rbind(train, test)
+
+## subject and activity columns firstly.
+
 Data<-Data[,c(562,563,1:561)]
 
 # 4 Appropriately labels the data set with descriptive variable names. 
@@ -50,7 +55,7 @@ names(Data)[1:2] <- c("subject","activity")
 
 Data <- Data[,grep("mean\\(\\)|std\\(\\)|subject|activity", 
                         names(Data), value=TRUE)]
-
+write.table(Data, "Dataset_HARUS.txt", row.names=FALSE)
 # Creating tidy dataset 
 
 names(Data) <- gsub("\\(|\\)|-|,", "", names(Data))
