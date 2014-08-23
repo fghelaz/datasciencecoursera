@@ -44,7 +44,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 
 ---
 ###Work description and operation:
-- install "plyr" package.
+- 	***install "plyr" package.***
 - unzip the data from <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip> or clone this repo in your **working directory**.
 - Folder "UCI HAR Dataset" and the "run_analysis.R" must be in the current working directory.
 - Copy and paste or source("run_analysis.R") command in Rstudio.
@@ -52,8 +52,9 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
   - Uses descriptive activity names to name the activities in train and Test data sets.
   - Merges the training and the test sets to create one data set.
   - Extracts only the measurements on the mean and standard deviation for each measurement. 
+  - Creates a tidy data Set **"Dataset_HARUS.txt"**. 
   - Appropriately labels the data set with descriptive variable names.
-  - Creates a tidy data Set **"averageDataset_HARUS.txt"** with the average of each variable for each activity and each subject.
+  - Creates a tidy data Set **"averageDataset_HARUS.txt"** with the average of each variable for each activity and each subject usind .
   
 ---
 
