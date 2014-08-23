@@ -16,7 +16,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 - 'averageDataset_HARUS.txt': Output Data Set of 'run_analysis.R'.
 - 'Dataset_HARUS.txt': Merge and tidy Data Set from Train and Test
 
-- './Data/': Folder that contains all DataSet that will be processed by the Script.
+- './UCI HAR Dataset/': Folder that contains all DataSet that will be processed by the Script.
   - 'features_info.txt': Shows information about the variables used on the feature vector.
 
   - 'features.txt': List of all features.
@@ -45,9 +45,8 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 ---
 ###Work description and operation:
 - install "plyr" package.
-- unzip the data from <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip> and rename the folder with "Data"
-or clone this repo in your **working directory**.
-- Folder "Data" and the "run_analysis.R" must be in the current working directory.
+- unzip the data from <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip> or clone this repo in your **working directory**.
+- Folder "UCI HAR Dataset" and the "run_analysis.R" must be in the current working directory.
 - Copy and paste or source("run_analysis.R") command in Rstudio.
 - What "run_analysis.R" does?.
   - Uses descriptive activity names to name the activities in train and Test data sets.
