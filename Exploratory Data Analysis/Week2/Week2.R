@@ -56,11 +56,66 @@ library(ggplot2)
 # or in the parent environment
 # plots = aesthetics(size, shape, color) and geoms(points, lines)
 # Factors are important for indicating subsets of the data
-str(mpg)
+
+mtcars$gear <- factor(mtcars$gear,levels=c(3,4,5),
+                      labels=c("3gears","4gears","5gears")) 
+mtcars$am <- factor(mtcars$am,levels=c(0,1),
+                    labels=c("Automatic","Manual")) 
+mtcars$cyl <- factor(mtcars$cyl,levels=c(4,6,8),
+                     labels=c("4cyl","6cyl","8cyl")) 
+
+# Kernel density plots for mpg
+# grouped by number of gears (indicated by color)
+
+qplot(mpg, data=mtcars, geom="density", fill=gear, alpha=I(.5), 
+      main="Distribution of Gas Milage", xlab="Miles Per Gallon", 
+      ylab="Density")
+
+
+qplot(mpg, data=mtcars, geom="density", col=gear, alpha=I(.5), 
+      main="Distribution of Gas Milage", xlab="Miles Per Gallon", 
+      ylab="Density")
+
+
+# Scatterplot of mpg vs. hp for each combination of gears and cylinders
+# in each facet, transmittion type is represented by shape and color
+
+qplot(hp, mpg, data=mtcars, shape=am, color=am, 
+      facets=gear~cyl, size=I(3),
+      xlab="Horsepower", ylab="Miles per Gallon") 
+
+# Separate regressions of mpg on weight for each number of cylinders
+
+qplot(wt, mpg, data=mtcars, geom=c("point", "smooth"), 
+      method="lm", formula=y~x, color=cyl, 
+      main="Regression of MPG on Weight", 
+      xlab="Weight", ylab="Miles per Gallon")
+
+# Boxplots of mpg by number of gears 
+# observations (points) are overlayed and jittered
+
+qplot(gear, mpg, data=mtcars, geom=c("boxplot", "jitter"), 
+      fill=gear, main="Mileage by Gear Number",
+      xlab="", ylab="Miles per Gallon")
+
+
+
+
+
 qplot(displ, hwy, data = mpg)
 qplot(displ, hwy, data = mpg, col = drv) # auto legend placement
 qplot(displ, hwy, data = mpg, geom = c("point", "smooth"))
+
+qplot(displ, hwy, data = mpg, geom = c("point", "smooth"), col = drv)
+qplot(displ, hwy, data = mpg, geom = c("point", "smooth"), fill = drv)
+
+
+
+#vamos con histogramas
+qplot(hwy, data = mpg)
+
 qplot(hwy, data = mpg, fill = drv)
+
 qplot(displ, hwy, data = mpg, facets = . ~ drv)
 qplot(hwy, data = mpg, facets = drv ~ ., binwidth = 2)
 ## MAACS data
