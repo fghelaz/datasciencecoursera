@@ -118,8 +118,11 @@ qplot(hwy, data = mpg, fill = drv)
 
 qplot(displ, hwy, data = mpg, facets = . ~ drv)
 qplot(hwy, data = mpg, facets = drv ~ ., binwidth = 2)
+
+
 ## MAACS data
-load("./data/maacs.Rda")
+getwd()
+load("data/maacs.Rda")
 head(maacs)
 str(maacs)
 # eno: Exhaled nitric oxide; pm25: Fine particulate matter
@@ -147,11 +150,12 @@ qplot(log(pm25), log(eno), data = maacs, geom = c("point", "smooth"),
 # scales: what scale an aesthetic map uses
 # coordinate system
 # Plot the data -> overlay the summary -> metadata and annotation
-qplot(logpm25, NocturnalSympt, data = maacs, facets = . ~ bmicat, 
+qplot(log(pm25), NocturnalSympt, data = maacs, facets = . ~ bmicat, 
       geom = c("point", "smooth"), method = "lm")
 head(maacs[, 1:3])
 
 g <- ggplot(maacs, aes(logpm25, NocturnalSympt))
+g <- ggplot(maacs, aes(log(pm25), duBedMusM))
 summary(g)
 print(g) # no layers in plot
 p <- g + geom_point()
