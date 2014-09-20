@@ -69,6 +69,7 @@ png('plot6.png',
 p <- ggplot(TotalLABCmotorEmissions, aes(x=year, y=Emissions, colour=City)) +
         geom_point() +
         geom_smooth(alpha=.2, size=1, method="loess") +
+        facet_grid(City  ~ ., scales="free") +
         labs(size= "Nitrogen",
              x = "Year",
              y = expression('Total PM'[2.5]*" Tons"),
