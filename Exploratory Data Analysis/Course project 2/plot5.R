@@ -41,7 +41,8 @@ SCC_onRoadVeh <- SCC_onRoad[VEH, ]
 NEI_BcityMotorVeh <- subset(NEI_Bcity, NEI_Bcity$SCC %in%  SCC_onRoadVeh$SCC)
 
 
-# Claculating 
+# Claculating emissions from motor vehicle sources
+# changed from 1999???2008 in Baltimore City
 
 BC_EmiY <- aggregate(NEI_BcityMotorVeh[c("Emissions")],
                  list(year = NEI_BcityMotorVeh$year),
@@ -61,5 +62,6 @@ p <- ggplot(BC_EmiY, aes(x=year, y=Emissions))+
              x = "Year",
              y = expression('Total PM'[2.5]*" Emission"),
         title = "Total Emissions From Motor Vehicle Sources\nin Baltimore City")
+
 print(p)
 dev.off()

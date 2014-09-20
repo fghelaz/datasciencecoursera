@@ -43,12 +43,10 @@ names(LABCmotor)[1] <- c("City")
 
 cities<-c("Los Angeles County","Baltimore City")
 LABCmotor$City = factor( LABCmotor$City,labels = cities)
-#
 
-#    TotalLABCmotorEmissions <- aggregate(LABCmotor[c("Emissions")], 
-#    list(fips = LABCmotor$fips, 
-#    year = LABCmotor$year), 
-#    sum)
+
+# Calculating emissions from motor vehicle sources in Baltimore City 
+# and emissions from motor vehicle sources in Los Angeles County
 
 
 LABCmotor<-LABCmotor[,c(1,4,6)]
@@ -56,7 +54,7 @@ TotalLABCmotorEmissions <- ddply(LABCmotor, .(City, year), numcolwise(sum))
 
 ##  With aggregate() func:
 ##    TotalLABCmotorEmissions <- aggregate(LABCmotor[c("Emissions")], 
-##    list(fips = LABCmotor$fips, 
+##    list(City = LABCmotor$City, 
 ##    year = LABCmotor$year), 
 ##    sum)
 
