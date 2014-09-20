@@ -60,7 +60,7 @@ p <- ggplot(BC_EmiY, aes(x=year, y=Emissions))+
         geom_smooth(method="loess") +
         labs(size= "Nitrogen",
              x = "Year",
-             y = expression('Total PM'[2.5]*" Emission"),
+             y = expression('Total PM'[2.5]*" Tons"),
         title = "Total Emissions From Motor Vehicle Sources\nin Baltimore City")
 
 print(p)

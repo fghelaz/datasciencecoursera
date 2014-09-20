@@ -1,4 +1,4 @@
-
+# Intalling packs and lib
 
 library(ggplot2)
 library(plyr)
@@ -71,7 +71,7 @@ p <- ggplot(TotalLABCmotorEmissions, aes(x=year, y=Emissions, colour=City)) +
         geom_smooth(alpha=.2, size=1, method="loess") +
         labs(size= "Nitrogen",
              x = "Year",
-             y = expression('Total PM'[2.5]*" Emission"),
+             y = expression('Total PM'[2.5]*" Tons"),
              title = "Motor vehicle Emissions\n Baltimore-Los Angeles")
 print(p)
 
