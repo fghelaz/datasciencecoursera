@@ -1,18 +1,15 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research: Peer Assessment 1
 ### Basic settings
-```{r}
+
+```r
 echo = TRUE  # Always make code visible
 options(scipen = 1)  # Turn off scientific notations for numbers
 library(ggplot2)
 ```
 
 ## Loading and preprocessing the data
-```{r}
+
+```r
 unzip("activity.zip")
 data <- read.csv("activity.csv", colClasses = c("integer", "Date", "factor"))
 data$month <- as.numeric(format(data$date, "%m"))
@@ -20,28 +17,57 @@ data$month <- as.numeric(format(data$date, "%m"))
 noNA <- na.omit(data)
 rownames(noNA) <- 1:nrow(noNA)
 head(noNA)
-dim(noNA)
+```
 
+```
+##   steps       date interval month
+## 1     0 2012-10-02        0    10
+## 2     0 2012-10-02        5    10
+## 3     0 2012-10-02       10    10
+## 4     0 2012-10-02       15    10
+## 5     0 2012-10-02       20    10
+## 6     0 2012-10-02       25    10
+```
+
+```r
+dim(noNA)
+```
+
+```
+## [1] 15264     4
 ```
 
 ## What is mean total number of steps taken per day?
 For this part of the assignment, you can ignore the missing values in the dataset.
 
 * Make a histogram of the total number of steps taken each day
-```{r}
+
+```r
 ggplot(noNA, aes(date, steps)) + geom_bar(stat = "identity", colour = "steelblue", fill = "steelblue", width = 0.7) + facet_grid(. ~ month, scales = "free") + labs(title = "Histogram of Total Number of Steps Taken Each Day", x = "Date", y = "Total number of steps")
 ```
+
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
 * Calculate and report the mean and median total number of steps taken per day
 
 Mean total number of steps taken per day:
-```{r}
+
+```r
 totalSteps <- aggregate(noNA$steps, list(Date = noNA$date), FUN = "sum")$x
 mean(totalSteps)
 ```
+
+```
+## [1] 10766.19
+```
 Median total number of steps taken per day:
-```{r}
+
+```r
 median(totalSteps)
+```
+
+```
+## [1] 10765
 ```
 
 
