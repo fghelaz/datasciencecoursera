@@ -4,11 +4,24 @@ output:
   html_document:
     keep_md: true
 ---
-
+### Basic settings
+```{r}
+echo = TRUE  # Always make code visible
+options(scipen = 1)  # Turn off scientific notations for numbers
+library(ggplot2)
+```
 
 ## Loading and preprocessing the data
+```{r}
+unzip("activity.zip")
+data <- read.csv("activity.csv", colClasses = c("integer", "Date", "factor"))
+data$month <- as.numeric(format(data$date, "%m"))
+noNA <- na.omit(data)
+rownames(noNA) <- 1:nrow(noNA)
+head(noNA)
+dim(noNA)
 
-
+```
 
 ## What is mean total number of steps taken per day?
 
