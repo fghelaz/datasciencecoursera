@@ -29,23 +29,44 @@ For this part of the assignment, you can ignore the missing values in the datase
 
 * Make a histogram of the total number of steps taken each day
 ```{r}
-ggplot(noNA, aes(date, steps)) + geom_bar(stat = "identity", colour = "steelblue", fill = "steelblue", width = 0.7) + facet_grid(. ~ month, scales = "free") + labs(title = "Histogram of Total Number of Steps Taken Each Day", x = "Date", y = "Total number of steps")
+totalSteps <- aggregate(noNA$steps, by=list(noNA$date), FUN = "sum")
+ggplot(noNA, aes(date, steps)) + 
+        geom_bar(stat = "identity", colour = "steelblue", fill = "steelblue", 
+                 width = 0.7) + 
+        facet_grid(. ~ month, scales = "free") +
+        geom_hline(yintercept=mean(totalSteps$x), color="black") +
+        geom_hline(yintercept=median(totalSteps$x), color="green", 
+                   linetype="dashed") +
+        labs(title = "Total Number of Steps Taken Each Day", 
+             x = "Date", y = "Total number of steps")
 ```
 
 * Calculate and report the mean and median total number of steps taken per day
 
 Mean total number of steps taken per day:
 ```{r}
-totalSteps <- aggregate(noNA$steps, list(Date = noNA$date), FUN = "sum")$x
-mean(totalSteps)
+mean(totalSteps$x)
 ```
 Median total number of steps taken per day:
 ```{r}
-median(totalSteps)
+median(totalSteps$x)
 ```
 
 
 ## What is the average daily activity pattern?
+* Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
+
+```{r}
+avgSteps <- aggregate(noNA$steps, list(interval = as.numeric(as.character(noNA$interval))), FUN = "mean")
+names(avgSteps)[2] <- "meanOfSteps"
+
+ggplot(avgSteps, aes(interval, meanOfSteps)) + geom_line(color = "steelblue", size = 0.8) + labs(title = "Time Series Plot of the 5-minute Interval", x = "5-minute intervals", y = "Average Number of Steps Taken")
+```
+
+* Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+```{r}
+avgSteps[avgSteps$meanOfSteps == max(avgSteps$meanOfSteps), ]
+```
 
 
 
