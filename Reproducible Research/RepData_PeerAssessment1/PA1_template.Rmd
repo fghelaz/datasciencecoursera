@@ -5,7 +5,7 @@ setwd("/Users/ALCIONE/coding")
 ### Basic settings
 ```{r}
 echo = TRUE  # Always make code visible
-options(scipen = 1)  # Turn off scientific notations for numbers
+
 library(ggplot2)
 ```
 
@@ -87,7 +87,7 @@ sum(is.na(activity))
 strategy does not need to be sophisticated. For example, you could use 
 the mean/median for that day, or the mean for that 5-minute interval, etc.
 
-My strategy is to use the mean for that 5-minute interval to fill each NA value in the steps column.
+The strategy is to use the mean for that 5-minute interval to fill each NA value.
 
 * Create a new dataset that is equal to the original dataset but with the missing data filled in.
 
@@ -121,7 +121,7 @@ ggplot(activity.NAfilled, aes(date, steps)) +
 
 * Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-Mean total number of steps taken per day:
+Mean total number of steps taken per day imputing missing data:
 ```{r}
 totalSteps.NAfilled <- aggregate(activity.NAfilled$steps, 
                         by=list(Date = activity.NAfilled$date), 
@@ -129,16 +129,52 @@ totalSteps.NAfilled <- aggregate(activity.NAfilled$steps,
 Mean.NAfilled <- mean(totalSteps.NAfilled$x)
 Mean.NAfilled 
 ```
-Median total number of steps taken per day:
+Median total number of steps taken per day imputing missing data:
 ```{r}
 Median.NAfilled <- median(totalSteps.NAfilled$x)
 Median.NAfilled
 ```
 Compare them with the two before imputing missing data:
+
+  *Mean
 ```{r}
 
-Mean - Mean.NAfilled
-Median - Median.NAfilled
+abs(Mean - Mean.NAfilled)
 ```
+  *Median
+```{r}
+abs(Median - Median.NAfilled)
+```
+So, if we use the mean for that 5-minute interval to fill each NA value, the mean
+of total steps taken per day is the same in both cases and the impact of the 
+missing data seems rather low on median. 
 
+### Are there differences in activity patterns between weekdays and weekends?
 
+* Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
+```{r}
+daytype <- function(date) {
+    if (weekdays(as.Date(date)) %in% c("Saturday", "Sunday")) {
+        "weekend"
+    } else {
+        "weekday"
+    }
+}
+activity$daytype <- as.factor(sapply(activity$date, daytype))
+```
+* Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
+
+avgSteps <- aggregate(activity$steps, 
+                      list(interval = as.numeric(as.character(activity$interval)), 
+                           weekdays = activity$daytype),
+                      FUN = "mean")
+
+ggplot(avgSteps, aes(interval, steps)) + 
+        geom_bar(stat = "identity", 
+                 colour = "grey", 
+                 fill = "grey", 
+                 width = 0.7) + 
+        facet_grid( daytype~., scales = "free") + 
+        labs(title = "Total Number of Steps Taken Each Day", 
+             x = "Interval", 
+             y = "Number of steps")
