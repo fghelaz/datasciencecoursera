@@ -4,9 +4,9 @@ Reproducible Research: Peer Assessment 1
 
 ### Basic settings
 ```{r}
-echo = TRUE  
 library(ggplot2)
-library(lattice)
+echo = TRUE  
+
 ```
 
 ### Loading and processing the data
@@ -20,18 +20,24 @@ activity.noNA <- na.omit(activity)
 
 
 ### What is mean total number of steps taken per day?
+For this part of the assignment, you can ignore the missing values in the dataset.
 
+* Calculate the total number of steps taken per day
+```{r}
+Totalsteps.date.noNA <- aggregate(steps ~ date, data = activity.noNA, FUN = sum)
+names(Totalsteps.date.noNA)[2] <- "totalsteps"
+head(Totalsteps.date.noNA)
+```
 * Make a histogram of the total number of steps taken each day
 ```{r}
-ggplot(activity.noNA, aes(date, steps)) + 
+ggplot(Totalsteps.date.noNA, aes(date, totalsteps)) + 
         geom_bar(stat = "identity", 
                  colour = "#0072B2", 
                  fill = "#0072B2", 
                  width = 0.6) + 
-        facet_grid(. ~ month, scales = "free") + 
         labs(title = "Total Number of Steps Taken Each Day", 
              x = "Date", 
-             y = "Number of steps")
+             y = "Num. of steps")
 ```
 
 * Calculate and report the mean and median total number of steps taken per day.
@@ -76,7 +82,7 @@ steps.interval$interval[which.max(steps.interval$x)]
 ```
 
 ### Imputing missing values
-* The total number of rows with NAs:
+* Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs).
 
 ```{r}
 sum(is.na(activity))
@@ -160,15 +166,21 @@ daytype <- function(date) {
         "weekday"
     }
 }
-activity$daytype <- as.factor(sapply(activity$date, daytype))
-```
-Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
-```{r}
+activity.NAfilled$daytype <- as.factor(sapply(activity.NAfilled$date, daytype))
 
-par(mfrow = c(2, 1))
-for (type in c("weekend", "weekday")) {
-    steps.type <- aggregate(steps ~ interval, data = activity, subset = activity$daytype == 
-        type, FUN = mean)
-    plot(steps.type, type = "l", main = type)
-}
+
+```
+
+* Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
+
+```{r}
+Steps.avg <- aggregate(activity.NAfilled$steps, 
+                      list(interval = as.numeric(as.character(activity.NAfilled$interval)), 
+                           daytype = activity.NAfilled$daytype),
+                      FUN = "mean")
+names(Steps.avg)[3] <- "meanOfSteps"
+
+ggplot(Steps.avg, aes(interval, meanOfSteps, color = factor(daytype)))+
+  geom_point()+
+  geom_line()
 ```
