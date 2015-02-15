@@ -178,9 +178,12 @@ Steps.avg <- aggregate(activity.NAfilled$steps,
                       list(interval = as.numeric(as.character(activity.NAfilled$interval)), 
                            daytype = activity.NAfilled$daytype),
                       FUN = "mean")
-names(Steps.avg)[3] <- "meanOfSteps"
+names(Steps.avg)[3] <- "meanSteps"
 
-ggplot(Steps.avg, aes(interval, meanOfSteps, color = factor(daytype)))+
-  geom_point()+
-  geom_line()
+ggplot(Steps.avg, aes(interval, meanSteps, color = daytype))+
+        geom_point()+
+        facet_grid(daytype ~ .) +
+        geom_line()
+
+
 ```
