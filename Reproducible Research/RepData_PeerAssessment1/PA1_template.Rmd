@@ -1,17 +1,23 @@
 ---
-output:
-  html_document:
+title: 'Reproducible Research: Peer Assessment 1'
+author: "Francisco Ghersi"
+output: 
+   html_document:
+    fig_caption: yes
     fig_height: 7
-    keep_md: true
+    keep_md: yes
 ---
-Reproducible Research: Peer Assessment 1
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.path='Figures/',
+                      echo=TRUE, warning=FALSE, message=FALSE)
+```
 ==========================================
 
 
 ### Basic settings
 ```{r}
 library(ggplot2)
-echo = TRUE  
+ 
 ```
 
 ### Loading and processing the data
