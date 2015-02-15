@@ -1,23 +1,21 @@
 Reproducible Research: Peer Assessment 1
 ==========================================
-setwd("/Users/ALCIONE/coding")
+
 
 ### Basic settings
 ```{r}
-echo = TRUE  # Always make code visible
-
+echo = TRUE  
 library(ggplot2)
+library(lattice)
 ```
 
 ### Loading and processing the data
 ```{r}
 unzip("activity.zip")
-
 activity <- read.csv("activity.csv", colClasses = c("integer", "Date", "factor"))
 activity$month <- as.numeric(format(activity$date, "%m"))
-
 activity.noNA <- na.omit(activity)
-rownames(activity.noNA) <- 1:nrow(activity.noNA)
+
 ```
 
 
@@ -27,9 +25,9 @@ rownames(activity.noNA) <- 1:nrow(activity.noNA)
 ```{r}
 ggplot(activity.noNA, aes(date, steps)) + 
         geom_bar(stat = "identity", 
-                 colour = "grey", 
-                 fill = "grey", 
-                 width = 0.7) + 
+                 colour = "#0072B2", 
+                 fill = "#0072B2", 
+                 width = 0.6) + 
         facet_grid(. ~ month, scales = "free") + 
         labs(title = "Total Number of Steps Taken Each Day", 
              x = "Date", 
@@ -64,7 +62,8 @@ steps.interval <- aggregate(activity.noNA$steps,
 
 
 ggplot(steps.interval, aes(interval, x)) + 
-        geom_line(size = 0.8) + 
+        geom_line(size = 0.8,
+                  colour="#0072B2") + 
         labs(title = "Time Series Plot ", 
              x = "5-minute intervals", 
              y = "Average Number of Steps ")
@@ -111,8 +110,8 @@ sum(is.na(activity.NAfilled))
 ```{r}
 ggplot(activity.NAfilled, aes(date, steps)) + 
         geom_bar(stat = "identity",
-                colour = "grey",
-                fill = "grey",
+                colour = "#0072B2",
+                fill = "#0072B2",
                 width = 0.7) + 
         labs(title = " Total Number of Steps Taken Each Day ", 
              x = "Date", 
@@ -153,6 +152,7 @@ missing data seems rather low on median.
 
 * Create a new factor variable in the dataset with two levels -- "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 ```{r}
+
 daytype <- function(date) {
     if (weekdays(as.Date(date)) %in% c("Saturday", "Sunday")) {
         "weekend"
@@ -162,19 +162,13 @@ daytype <- function(date) {
 }
 activity$daytype <- as.factor(sapply(activity$date, daytype))
 ```
-* Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
+Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
+```{r}
 
-avgSteps <- aggregate(activity$steps, 
-                      list(interval = as.numeric(as.character(activity$interval)), 
-                           weekdays = activity$daytype),
-                      FUN = "mean")
-
-ggplot(avgSteps, aes(interval, steps)) + 
-        geom_bar(stat = "identity", 
-                 colour = "grey", 
-                 fill = "grey", 
-                 width = 0.7) + 
-        facet_grid( daytype~., scales = "free") + 
-        labs(title = "Total Number of Steps Taken Each Day", 
-             x = "Interval", 
-             y = "Number of steps")
+par(mfrow = c(2, 1))
+for (type in c("weekend", "weekday")) {
+    steps.type <- aggregate(steps ~ interval, data = activity, subset = activity$daytype == 
+        type, FUN = mean)
+    plot(steps.type, type = "l", main = type)
+}
+```
