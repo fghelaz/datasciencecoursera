@@ -53,7 +53,7 @@ ggplot(Totalsteps.date.noNA, aes(date, totalsteps)) +
              y = "Num. of steps")
 ```
 
-![](Figures/unnamed-chunk-4-1.png) 
+![](figures/unnamed-chunk-4-1.png) 
 
 * Calculate and report the mean and median total number of steps taken per day.
   
@@ -101,7 +101,7 @@ ggplot(steps.interval, aes(interval, x)) +
              y = "Average Number of Steps ")
 ```
 
-![](Figures/unnamed-chunk-7-1.png) 
+![](figures/unnamed-chunk-7-1.png) 
 
 * Which 5-minute interval, on average across all the days in the dataset, 
   contains the maximum number of steps?
@@ -168,7 +168,7 @@ ggplot(activity.NAfilled, aes(date, steps)) +
              y = "Total number of steps")
 ```
 
-![](Figures/unnamed-chunk-11-1.png) 
+![](figures/unnamed-chunk-11-1.png) 
 
 * Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
@@ -250,4 +250,4 @@ ggplot(Steps.avg, aes(interval, meanSteps, color = daytype))+
         geom_line()
 ```
 
-![](Figures/unnamed-chunk-17-1.png) 
+![](figures/unnamed-chunk-17-1.png) 
